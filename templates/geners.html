@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+</head>
+<style>
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(/static/backgroundtop.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #a08f43;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #a08f43;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+h1{
+    color: #d5bb65;
+    font-size: 45px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.column{
+      box-sizing:border-box;
+}
+
+.column{
+          float:left;
+          width:33.33%;
+          padding:5px;
+
+}
+.row::after{
+        content:"";
+        clear:both;
+        display:table;
+
+ }
+.hb{
+width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    margin-left:80%;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #a08f43;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.hb:hover span{
+    width: 100%;
+}
+.hb:hover{
+    border: none;
+}
+</style>
+<body>
+
+
+             <button class="hb" type="button" onclick="window, location.href ='top.html'"><span></span>Home</button>
+
+
+                  <h1><u>GENRES</u></h1>
+
+
+           <form action="" method="POST" enctype="multipart/form-data">
+
+
+               <button  type="submit" name="genre" value="fiction"><span></span>Fiction</button>
+               <button  type="submit" name="genre" value="comics"><span></span>Comics</button>
+               <button  type="submit" name="genre" value="drama"><span></span>Drama</button>
+               <button  type="submit" name="genre" value="romantic"><span></span>Romantic</button>
+               <button  type="submit" name="genre" value="fantasy"><span></span>Fantasy</button>
+                <button  type="submit" name="genre" value="horror"><span></span>Horror</button>
+               <button  type="submit" name="genre" value="crime"><span></span>Crime</button>
+                <button  type="submit" name="genre" value="mystery"><span></span>Mystery</button>
+               <button  type="submit" name="genre" value="education"><span></span>Education</button>
+               <button  type="submit" name="genre" value="technology"><span></span>Technology</button>
+               <button  type="submit" name="genre" value="medical"><span></span>Medical</button>
+                <button  type="submit" name="genre" value="sports"><span></span>Sports</button>
+                <button  type="submit" name="genre" value="family"><span></span>Family</button>
+               <button  type="submit" name="genre" value="food"><span></span>Food</button>
+
+            </form>
+
+
+
+</body>
+</html>

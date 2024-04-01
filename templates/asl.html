@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            ASL
+        </title>
+    </head>
+    <center>
+    <body style="background-color: yellowgreen;">
+        <h1 style="color: red;">Book Recommandation System Using Machine Learning</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label style="color: Black;"><h3>Enter Book Name</h3></label>
+            <input type="text"  name="bookName" value="{{ bookName }}">
+            <br>
+
+            <label style="color: Black;"><h3>Number of Recommandations</h3></label>
+            <input type="text"  name="number" value="{{ number }}">
+            <br>  <br>
+
+            <input style="font-size: larger;" type="submit" name="sub" value="Submit">
+            <br>
+            <label style="color: blue;"><h3>Content Based Recommandation : {{ content }}</h3></label>
+       
+            <label style="color: blue;"><h3>Colaborative Filtering : {{ colaborative }}</h3></label>
+        </form>
+    </body>
+    </center>
+</html>

@@ -1,0 +1,7 @@
+numpy
+pandas
+sklearn
+flask-wtf
+email-validator
+flask-sqlalchemy
+flask-login

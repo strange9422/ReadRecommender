@@ -1,0 +1,56 @@
+.column{
+      box-sizing:border-box;
+}
+
+.column{
+          float:left;
+          width:33.33%;
+          padding:5px;
+
+}
+.row::after{
+        content:"";
+        clear:both;
+        display:table;
+
+ }
+
+.navbar{
+      overflow:hidden;
+      background-color:grey;
+      position:fixed;
+      top:0;
+      width:100%;
+
+      margin-right:5px;
+      padding:10px;
+}
+
+.navbar a{
+     float:left;
+     display:block;
+     color:#f2f2f2;
+     text-align:center;
+     padding:14px 16px;
+     text-decoration:none;
+     font-size:25px;
+
+}
+
+.navbar a:hover{
+   background:#ddd;
+   color:black;
+}
+.main{
+  padding:30px;
+  margin-top:40px;
+  h
+
+}
+
+.title{
+   text-align:center;
+   color:yellow;
+   background-color: hotpink;
+}
+

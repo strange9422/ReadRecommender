@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+</head>
+<style>
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(/static/backgroundtop.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #a08f43;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #a08f43;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+h1{
+    color: #d5bb65;
+    font-size: 45px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.column{
+      box-sizing:border-box;
+}
+
+.column{
+          float:left;
+          width:33.33%;
+          padding:5px;
+
+}
+.row::after{
+        content:"";
+        clear:both;
+        display:table;
+
+ }
+
+</style>
+<body>
+    <div class="navbar">
+        <ul>
+            <li> <button type="button" onclick="window, location.href ='profile.html'"><span></span>Profile</button></li>
+            <li> <button type="button" onclick="window, location.href ='geners.html'"><span></span>Genres</button></li>
+            <li> <button type="button" onclick="window, location.href ='collab.html'"><span></span>Collaborative</button></li>
+
+            <li> <button type="button" onclick="window, location.href ='about.html'"><span></span>About</button></li>
+            <li> <button type="button" onclick="window, location.href ='index.html'"><span></span>Logout</button></li>
+        </ul>
+    </div>
+    <h1><u>Here Are Some Books</u></h1>
+    <div class="main">
+
+        <div class="row">
+         {% for x ,y in dic.items()  %}
+
+<!--                    <div class="column">-->
+<!--                         <img style="margin:8px" src="{{y}}" alt="Unable to load url">-->
+<!--                         {% if x=='Harry Potter and the Prisoner of Azkaban (Book 3)'%}-->
+<!--&lt;!&ndash;                         <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>&ndash;&gt;-->
+<!--                            <a href="/static/book.pdf">Harry Potter and the Prisoner of Azkaban (Book 3)</a>-->
+<!--                        {% else %}-->
+<!--                        <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>-->
+<!--                          {% endif %}-->
+<!--                     </div>-->
+
+                    <div class="column">
+                        {% if x=='Harry Potter and the Prisoner of Azkaban (Book 3)'%}
+                          <a href="/static/book.pdf"> <img style="margin:8px" src="{{y}}" alt="Unable to load url"></a>
+                           <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>
+
+                        {% elif x=='Harry Potter and the Goblet of Fire (Book 4)'%}
+                            <a href="/static/4_harry_potter_and_the_goblet_of_fire.pdf"> <img style="margin:8px" src="{{y}}" alt="Unable to load url"></a>
+                           <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>
+
+                         {% else %}
+                            <img style="margin:8px" src="{{y}}" alt="Unable to load url">
+                            <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>
+                          {% endif %}
+                     </div>
+
+
+
+
+
+         {% endfor %}
+       </div>
+    </div>
+</body>
+</html>

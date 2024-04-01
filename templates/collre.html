@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COLLABORATIVE RECOMMENDATION</title>
+
+
+</head>
+<style>
+  body{
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url("/static/backgroundindex.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  h1{
+    font-size: 40px;
+    margin-top: -10px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #d2ad5d;
+  }
+  button{
+    width: 120px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #cdb960;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #a08f43;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover{
+    border: none;
+}
+.navbar{
+    width: 30%;
+    margin-left: 1000px;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.column{
+      box-sizing:border-box;
+}
+
+.column{
+          float:left;
+          width:33.33%;
+          padding:5px;
+
+}
+.row::after{
+        content:"";
+        clear:both;
+        display:table;
+
+ }
+
+</style>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><button type="button" onclick="window,location.href = 'collab.html'"><span></span>Search  Again</button></li>
+            <li><button type="button" onclick="window,location.href = 'top.html'"><span></span>Home</button></li>
+        </ul>
+    </div>
+    <h1><u>Here Are The Results!</u></h1>
+<div class="row">
+ {% for x ,y in dic.items()  %}
+    <div class="column">
+         <img style="margin:8px" src="{{y}}">
+           <h3 style="color:#fff;margin-bottom:10px">{{x}}</h3>
+
+        </div>
+          {% endfor %}
+
+
+
+</div>
+</body>
+</html>

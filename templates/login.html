@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+
+     <link rel ="stylesheet" href ="/static/style_log.css">
+
+
+
+
+
+</head>
+<body>
+<div class="banner">
+<h1>LOGIN FORM</h1>
+ <div class="container">
+{% with messages=get_flashed_messages(with_categories=true)%}
+{%if messages %}
+   {% for category , message in messages %}
+   <div class="invalid-feedback">
+       {{message}}
+
+   </div >
+   {% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+   <form  c method="post" action="">
+         {{ form.hidden_tag() }}
+
+          <table>
+              <tr>
+
+             <div class="form-group">
+                 <td>
+                 {{ form.email.label(class="fd")}}
+                   </td><td>
+                  {% if form.email.errors %}
+                      {{ form.email(class="form-control form-control-lg is_invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                              <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+
+                  {% else %}
+                 {{ form.email(class="here would be class name")}}
+                 {% endif %}
+                 </td>
+             </div>
+              </tr>
+
+              <tr>
+             <div>
+                 <td>
+                 {{ form.password.label(class="fd")}}
+                     </td><td>
+                  {% if form.password.errors %}
+                      {{ form.password(class="form-control form-control-lg is_invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                              <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+
+                  {% else %}
+
+                 {{ form.password(class="here would be class name")}}
+                 {% endif %}
+                 </td>
+             </div>
+
+            </tr>
+              </table>
+
+           <div class="sub">
+               {{ form.submit(class="here would be class name")}}
+           </div>
+
+     </form>
+     </div>
+
+    <div class="last">
+            Need An Account?  <button type="button" onclick="window,location.href ='register.html'"><span></span>Sign Up</button>
+        </div>
+  </div>
+
+
+
+</body>
+</html>

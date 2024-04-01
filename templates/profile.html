@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOOK RECOMMENDATION SYSTEM</title>
+    <link rel ="stylesheet" href ="/static/styleabout.css">
+<!--    <link rel ="stylesheet" href ="/static/style_regi.css">-->
+</head>
+<body>
+       <div class="banner">
+            <h1>PROFILE</h1>
+
+    <div class="container">
+{% with messages=get_flashed_messages(with_categories=true)%}
+{%if messages %}
+   {% for category , message in messages %}
+   <div class="alert alert-{{category}}">
+       {{message}}
+
+   </div>
+   {% endfor %}
+{% endif %}
+{% endwith %}
+
+   <form method="post" action="">
+         {{ form.hidden_tag() }}
+
+
+             <table>
+                 <tr>
+
+             <div class="form-ele">
+                 <td>
+                 {{ form.book_name.label(class="fd")}}
+                  </td>
+                     <td>
+                     {% if form.book_name.errors %}
+                      {{ form.book_name(class="ans")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.book_name.errors %}
+                              <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+
+                  {% else %}
+                 {{ form.book_name(class="ans")}}
+                 {% endif %}
+                 </td>
+             </div>
+          </tr>
+
+                      <tr>
+             <div class="form-ele">
+                 <td>
+                 {{ form.rating.label(class="fd")}}
+                  </td><td>
+                  {% if form.rating.errors %}
+                      {{ form.rating(class="ans")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.rating.errors %}
+                              <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+
+                  {% else %}
+                 {{ form.rating(class="ans")}}
+                 {% endif %}
+                 </td>
+             </div>
+                     </tr>
+                  <tr>
+             <div class="form-ele">
+                 <td>
+                 {{ form.userid.label(class="fd")}}
+                  </td><td>
+                  {% if form.userid.errors %}
+                      {{ form.userid(class="ans")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.userid.errors %}
+                              <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+
+                  {% else %}
+                 {{ form.userid(class="ans")}}
+                 {% endif %}
+                 </td>
+             </div>
+                     </tr>
+                    </table>
+
+
+           <div class="sub">
+               {{ form.submit(class="btn btn-outline-info")}}
+           </div>
+     </form>
+</div>
+
+
+           <div class="content">
+
+                <div class="info-box">
+                   <table id="info-table">
+                       <tr>
+                           <td> User Id</td>
+                           <td>{{current_user.id}}</td>
+                       </tr>
+                       <tr>
+                           <td> Name </td>
+                           <td>{{current_user.username}}</td>
+                       </tr>
+                       <tr>
+                           <td> Email</td>
+                           <td>{{current_user.email}}</td>
+                       </tr>
+
+                   </table>
+                     </div>
+       </div>
+
+
+
+                <div>
+                    <button type="button" onclick="window,location.href ='top.html'"><span></span>Home</button>
+
+                </div>
+
+           </div>
+
+</body>
+
+
+</html>
+
+
+
